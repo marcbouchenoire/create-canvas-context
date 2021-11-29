@@ -19,15 +19,15 @@
   },
   "sideEffects": false,
   "source": "./src/index.ts",
-  "main": "./dist/create-canvas-context.js",
-  "module": "./dist/create-canvas-context.module.js",
-  "modern": "./dist/create-canvas-context.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "modern": "./dist/index.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "module": "./dist/create-canvas-context.module.js",
-      "import": "./dist/create-canvas-context.mjs",
-      "default": "./dist/create-canvas-context.js"
+      "module": "./dist/index.module.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
