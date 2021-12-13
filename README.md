@@ -8,7 +8,7 @@
 [![coverage](https://img.shields.io/codecov/c/github/marcbouchenoire/create-canvas-context?color=%23e4b)](https://codecov.io/gh/marcbouchenoire/create-canvas-context)
 [![license](https://img.shields.io/github/license/marcbouchenoire/create-canvas-context?color=%23f81)](https://github.com/marcbouchenoire/create-canvas-context/blob/main/LICENSE)
 
-- 🗜️ **Tiny**: Just around **600 bytes** on [modern platforms](https://bundle.js.org/?bundle&q=create-canvas-context)
+- 🗜️ **Tiny**: Just around **600 bytes** on modern platforms
 - 🧪 **Reliable**: Fully tested with [100% code coverage](https://codecov.io/gh/marcbouchenoire/create-canvas-context)
 - 📦 **Typed**: Written in [TypeScript](https://www.typescriptlang.org/) and includes definitions out-of-the-box
 - 💨 **Zero dependencies**
