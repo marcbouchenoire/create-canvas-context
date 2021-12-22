@@ -1,6 +1,6 @@
 import * as assert from "uvu/assert"
 import { createCanvasContext } from "../src"
-import { mock } from "./helpers"
+import { affect } from "./helpers"
 
 const PROVIDED_WIDTH = 200
 const PROVIDED_HEIGHT = 100
@@ -21,7 +21,7 @@ describe("createCanvasContext", () => {
   })
 
   it("should return an HTMLCanvasElement when the offscreen option is to true but OffscreenCanvas isn't supported", () => {
-    const restoreOffscreenCanvas = mock(window, "OffscreenCanvas")
+    const restoreOffscreenCanvas = affect(window, "OffscreenCanvas")
 
     const [, canvas] = createCanvasContext("2d", { offscreen: true })
 
@@ -31,8 +31,8 @@ describe("createCanvasContext", () => {
   })
 
   it("should return null values when HTMLCanvasElement or OffscreenCanvas aren't supported", () => {
-    const restoreHTMLCanvasElement = mock(window, "HTMLCanvasElement")
-    const restoreOffscreenCanvas = mock(window, "OffscreenCanvas")
+    const restoreHTMLCanvasElement = affect(window, "HTMLCanvasElement")
+    const restoreOffscreenCanvas = affect(window, "OffscreenCanvas")
 
     const [context, canvas] = createCanvasContext("2d")
     const [offscreenContext, offscreenCanvas] = createCanvasContext("2d", {

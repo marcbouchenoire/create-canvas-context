@@ -65,7 +65,7 @@ const [context, canvas] = createCanvasContext("webgl", {
 
 ## Options
 
-A secondary `options` argument surfaces all context-specific attributes available using [`HTMLCanvasElement.getContext()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) and adds a few optional settings to tweak the behavior of `createCanvasContext`.
+A secondary `options` argument surfaces all context-specific attributes available using [`HTMLCanvasElement.getContext()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) and adds a few options to tweak the behavior of `createCanvasContext`.
 
 #### `canvas`
 

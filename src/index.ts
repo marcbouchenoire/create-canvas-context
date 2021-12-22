@@ -26,6 +26,31 @@ const defaultOptions: Options = {
   offscreen: false
 }
 
+/**
+ * Create a canvas and get a rendering context from it.
+ *
+ * @param type - The rendering context type to get.
+ * @param [options] - An optional set of options and context attributes.
+ * @param [options.canvas] - Provide an existing canvas.
+ * @param [options.offscreen] - Use `OffscreenCanvas` instead of `HTMLCanvasElement` when supported.
+ * @param [options.width] - Set the canvas width.
+ * @param [options.height] - Set the canvas height.
+ * @param [options...attributes] - Set context attributes.
+ * @returns The selected rendering context and its canvas.
+ *
+ * @example
+ *
+ * ```js
+ * const [context, canvas] = createCanvasContext("2d", {
+ *   canvas: document.createElement("canvas"),
+ *   offscreen: true,
+ *   alpha: false
+ * })
+ *
+ * // context: CanvasRenderingContext2D
+ * // canvas: OffscreenCanvas
+ * ```
+ */
 export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
