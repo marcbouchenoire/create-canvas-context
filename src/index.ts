@@ -15,11 +15,30 @@ import {
 const DEFAULT_WIDTH = 300
 const DEFAULT_HEIGHT = 150
 
-interface Options {
-  canvas?: HTMLCanvasElement | OffscreenCanvas
+interface Options extends CanvasOption, OffscreenOption {
+  /**
+   * Set the canvas height.
+   */
   height?: number
-  offscreen?: boolean
+
+  /**
+   * Set the canvas width.
+   */
   width?: number
+}
+
+interface CanvasOption<T = HTMLCanvasElement | OffscreenCanvas> {
+  /**
+   * Provide an existing canvas.
+   */
+  canvas?: T
+}
+
+interface OffscreenOption<T = boolean> {
+  /**
+   * Whether to use `OffscreenCanvas` instead of `HTMLCanvasElement`.
+   */
+  offscreen?: T
 }
 
 const defaultOptions: Options = {
@@ -30,9 +49,9 @@ const defaultOptions: Options = {
  * Create a canvas and get a rendering context from it.
  *
  * @param type - The rendering context type to get.
- * @param [options] - An optional set of options and context attributes.
+ * @param [options] - An optional set of settings and context attributes.
  * @param [options.canvas] - Provide an existing canvas.
- * @param [options.offscreen] - Use `OffscreenCanvas` instead of `HTMLCanvasElement` when supported.
+ * @param [options.offscreen] - Whether to use `OffscreenCanvas` instead of `HTMLCanvasElement`.
  * @param [options.width] - Set the canvas width.
  * @param [options.height] - Set the canvas height.
  * @param [options...attributes] - Set context attributes.
@@ -55,13 +74,15 @@ export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
-    | (Options & { canvas?: undefined; offscreen?: false })
+    | (Options &
+        Partial<CanvasOption<undefined>> &
+        Partial<OffscreenOption<false>>)
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement | null]
 export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
-    | (Options & { canvas?: undefined; offscreen: true })
+    | (OffscreenOption<true> & Options & Partial<CanvasOption<undefined>>)
 ): [
   ContextRenderingContext<T> | OffscreenContextRenderingContext<T> | null,
   HTMLCanvasElement | OffscreenCanvas | null
@@ -70,13 +91,15 @@ export function createCanvasContext<T extends ContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
-    | (Options & { canvas: HTMLCanvasElement; offscreen?: false })
+    | (CanvasOption<HTMLCanvasElement> &
+        Options &
+        Partial<OffscreenOption<false>>)
 ): [ContextRenderingContext<T> | null, HTMLCanvasElement]
 export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
-    | (Options & { canvas: HTMLCanvasElement; offscreen: true })
+    | (CanvasOption<HTMLCanvasElement> & OffscreenOption<true> & Options)
 ): [
   ContextRenderingContext<T> | OffscreenContextRenderingContext<T> | null,
   HTMLCanvasElement | OffscreenCanvas
@@ -85,7 +108,7 @@ export function createCanvasContext<T extends OffscreenContextType>(
   type: T,
   options?:
     | ContextAttributes<T>
-    | (Options & { canvas: OffscreenCanvas; offscreen?: true })
+    | (CanvasOption<OffscreenCanvas> & Options & Partial<OffscreenOption<true>>)
 ): [OffscreenContextRenderingContext<T> | null, OffscreenCanvas]
 export function createCanvasContext<
   T extends ContextType | OffscreenContextType

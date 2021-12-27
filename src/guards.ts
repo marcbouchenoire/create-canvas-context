@@ -1,18 +1,18 @@
 import { PlainFunction, Unpack } from "./types"
 
 /**
- * Return whether the value is a number.
+ * Whether the value is a number.
  *
- * @param value - The value to be checked.
+ * @param value - The value to check.
  */
 export function isNumber(value: number | unknown): value is number {
   return typeof value === "number"
 }
 
 /**
- * Return whether the value is a function.
+ * Whether the value is a function.
  *
- * @param value - The value to be checked.
+ * @param value - The value to check.
  */
 export function isFunction<T extends PlainFunction>(
   value: T | unknown
@@ -21,9 +21,9 @@ export function isFunction<T extends PlainFunction>(
 }
 
 /**
- * Return whether the value is a canvas (either `HTMLCanvasElement` or `OffscreenCanvas`).
+ * Whether the value is a canvas (either `HTMLCanvasElement` or `OffscreenCanvas`).
  *
- * @param value - The value to be checked.
+ * @param value - The value to check.
  */
 export function isCanvas<T extends HTMLCanvasElement | OffscreenCanvas>(
   value: T | unknown
@@ -32,9 +32,9 @@ export function isCanvas<T extends HTMLCanvasElement | OffscreenCanvas>(
 }
 
 /**
- * Return whether the value is a canvas that can transfer its control.
+ * Whether the value is a canvas that can transfer its control.
  *
- * @param value - The value to be checked.
+ * @param value - The value to check.
  */
 export function isTransferableCanvas(
   value: HTMLCanvasElement | OffscreenCanvas | unknown
