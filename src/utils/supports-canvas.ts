@@ -1,12 +1,12 @@
 /**
- * Return whether `HTMLCanvasElement` exists.
+ * Whether `HTMLCanvasElement` exists.
  */
 export function supportsCanvas() {
   return typeof HTMLCanvasElement !== "undefined"
 }
 
 /**
- * Return whether `OffscreenCanvas` exists.
+ * Whether `OffscreenCanvas` exists.
  */
 export function supportsOffscreenCanvas() {
   return typeof OffscreenCanvas !== "undefined"
