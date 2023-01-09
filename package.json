@@ -65,13 +65,13 @@
     "test:coverage": "yarn test --coverage"
   },
   "devDependencies": {
-    "@marcbouchenoire/eslint-config": "^2.4.2",
+    "@marcbouchenoire/eslint-config": "^2.8.1",
     "@marcbouchenoire/prettier-config": "^1.1.0",
     "@types/offscreencanvas": "^2019.6.4",
     "@web/dev-server-esbuild": "^0.2.16",
     "@web/test-runner": "^0.13.22",
     "@web/test-runner-puppeteer": "^0.10.4",
-    "eslint": "^8.5.0",
+    "eslint": "^8.31.0",
     "husky": "4.3.8",
     "microbundle": "^0.14.2",
     "nano-staged": "^0.5.0",

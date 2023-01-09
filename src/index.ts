@@ -1,5 +1,5 @@
 import { isCanvas, isNumber, isTransferableCanvas } from "./guards"
-import {
+import type {
   ContextAttributes,
   ContextRenderingContext,
   ContextType,
