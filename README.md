@@ -2,7 +2,7 @@
 
 🎨 Create a canvas and get a rendering context from it.
 
-[![build](https://img.shields.io/github/workflow/status/marcbouchenoire/create-canvas-context/CI)](https://github.com/marcbouchenoire/create-canvas-context/actions/workflows/ci.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/marcbouchenoire/create-canvas-context/.github/workflows/ci.yml)](https://github.com/marcbouchenoire/create-canvas-context/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/create-canvas-context?color=%230cf)](https://www.npmjs.com/package/create-canvas-context)
 [![size](https://img.shields.io/bundlephobia/minzip/create-canvas-context?label=size&color=%2385f)](https://bundlephobia.com/package/create-canvas-context)
 [![coverage](https://img.shields.io/codecov/c/github/marcbouchenoire/create-canvas-context?color=%23e4b)](https://codecov.io/gh/marcbouchenoire/create-canvas-context)
