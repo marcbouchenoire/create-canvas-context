@@ -1,4 +1,4 @@
-import { Guard } from "../types"
+import type { Guard } from "../types"
 
 /**
  * Return a value only if a given type guard returns positively.
