@@ -61,7 +61,7 @@
     "lint:tsc": "tsc --project tsconfig.json",
     "prepublishOnly": "pnpm build",
     "test": "wtr",
-    "test:coverage": "pnpm test --coverage",
+    "test:coverage": "pnpm test -- --coverage",
     "change": "pnpm changeset",
     "bump": "pnpm changeset version && pnpm install",
     "release": "pnpm test && pnpm publish -r"
