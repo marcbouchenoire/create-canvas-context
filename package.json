@@ -63,8 +63,8 @@
     "test": "wtr",
     "test:coverage": "pnpm test -- --coverage",
     "change": "pnpm changeset",
-    "bump": "pnpm changeset version && pnpm install",
-    "release": "pnpm test && pnpm publish -r"
+    "version": "pnpm changeset version && pnpm install --no-frozen-lockfile",
+    "release": "pnpm build && pnpm test && pnpm publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
